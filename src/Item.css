@@ -1,0 +1,26 @@
+.itemWrap {
+  background-color:#F2F5DE;
+  color: #AC05C2;
+  height: min-content;
+  padding: 4px;
+  margin: 5px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.itemWrap:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.itemWrap img {
+  margin-left: auto;
+}
+
+.itemWrap button {
+  padding: 8px;
+}
