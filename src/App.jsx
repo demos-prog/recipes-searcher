@@ -49,11 +49,20 @@ function App() {
     const isValid = await checkIngredientValidity(entered);
     if (isValid && !arrOfIngredients.includes(entered)) {
       setArrOfIngredients(prevArr => [...prevArr, entered]);
+    } else {
+      alert("Invalid ingredient has been entered! Please, try again.")
     }
   }
 
   function handleDelete(item) {
     setArrOfIngredients(prevArr => prevArr.filter(req => req !== item));
+  }
+
+  function btnHandle() {
+    const elem = document.querySelector('#inp');
+    const inputValue = elem.value;
+    handleEnter(inputValue);
+    elem.value = "";
   }
 
   useEffect(() => {
@@ -71,7 +80,10 @@ function App() {
     <div id="contentWrapper">
       <div id="inputAreaWrapper">
         <div id="inputArea">
-          <InputField handleEnter={handleEnter} />
+          <div id='area'>
+            <InputField handleEnter={handleEnter} />
+            <button id='add_btn' onClick={btnHandle}>Add ingredient</button>
+          </div>
           <ActionBtn id="btn" setFlag={setFlag} />
         </div>
         <ListOfRequirements
